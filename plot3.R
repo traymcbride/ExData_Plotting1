@@ -39,14 +39,14 @@ with(ElectricData, plot(TimeStamp, Sub_metering_1, xlab = "",
     ylab = "Energy sub metering",type="n"))
 #A quick check with min shows all submetering values are non-negative.
 with(subset(ElectricData, Sub_metering_1 >= 0), 
-     points(TimeStamp,Sub_metering_1,type="l",col="lightblue2"))
+     points(TimeStamp,Sub_metering_1,type="l"))
 
 with(subset(ElectricData, Sub_metering_2 >= 0), 
      points(TimeStamp,Sub_metering_2,type="l",col="red"))
 
 with(subset(ElectricData, Sub_metering_3 >= 0), 
-     points(TimeStamp,Sub_metering_3,type="l"))
+     points(TimeStamp,Sub_metering_3,type="l",col="blue"))
 
-legend("topright", lty = 1, col = c("lightblue2", "red", "black"), 
+legend("topright", lty = 1, col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 dev.off()
